@@ -1,0 +1,26 @@
+@import "styles/main.module.scss";
+
+.container {
+    cursor: pointer;
+    height: 2rem;
+    @include centerElement;
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    span {
+        color: $color-primary;
+        display: none;
+    }
+
+    &:hover svg {
+        display: none;
+    }
+    &:hover {
+        span {
+            display: block;
+        }
+    }
+}
