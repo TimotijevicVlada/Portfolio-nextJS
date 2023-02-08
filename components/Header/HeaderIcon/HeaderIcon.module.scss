@@ -11,16 +11,65 @@
     }
 
     span {
-        color: $color-primary;
+        color: $color-gold;
+        font-size: 0.8rem;
         display: none;
+        text-transform: capitalize;
     }
 
     &:hover svg {
         display: none;
     }
+
     &:hover {
         span {
             display: block;
+        }
+    }
+
+    &.active {
+        &:nth-child(1) {
+            svg {
+                path {
+                    stroke: $color-gold;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            svg {
+                path {
+                    stroke: $color-gold;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            svg {
+                path {
+                    stroke: $color-gold;
+                }
+            }
+
+            circle {
+                stroke: $color-gold;
+            }
+        }
+
+        &:nth-child(4) {
+            svg {
+                path {
+                    stroke: $color-gold;
+                }
+            }
+        }
+
+        &:nth-child(5) {
+            svg {
+                path {
+                    fill: $color-gold;
+                }
+            }
         }
     }
 }

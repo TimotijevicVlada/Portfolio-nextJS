@@ -1,2 +1,6 @@
 @import "styles/main.module.scss";
 
+.container {
+    background-color: $color-primary;
+    height: 100vh;
+}
