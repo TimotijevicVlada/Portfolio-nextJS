@@ -5,6 +5,12 @@
     height: 2rem;
     @include centerElement;
 
+    @include respond(phone) {
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
     svg {
         width: 2rem;
         height: 2rem;
@@ -17,13 +23,15 @@
         text-transform: capitalize;
     }
 
-    &:hover svg {
-        display: none;
-    }
+    @include respond(overPhone) {
+        &:hover svg {
+            display: none;
+        }
 
-    &:hover {
-        span {
-            display: block;
+        &:hover {
+            span {
+                display: block;
+            }
         }
     }
 

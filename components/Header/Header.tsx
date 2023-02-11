@@ -24,7 +24,6 @@ const Header = () => {
 
     const windowSize = useWindowSize();
     const isMobile = useMemo(() => windowSize && windowSize < 768, [windowSize]);
-    console.log("isMobile", isMobile)
 
     const icons = [
         { name: "home", icon: <HomeIcon />, route: "/" },
@@ -50,14 +49,16 @@ const Header = () => {
                     />
                 ))}
             </div>
-            <div className={css.socialMediaWrapper}>
-                <Link href="https://github.com/TimotijevicVlada" target="_blank">
-                    <GitHubIcon />
-                </Link>
-                <Link href="https://www.linkedin.com/in/vladimir-timotijevic" target="_blank">
-                    <LinkedinIcon />
-                </Link>
-            </div>
+            {!isMobile &&
+                <div className={css.socialMediaWrapper}>
+                    <Link href="https://github.com/TimotijevicVlada" target="_blank">
+                        <GitHubIcon />
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/vladimir-timotijevic" target="_blank">
+                        <LinkedinIcon />
+                    </Link>
+                </div>
+            }
         </div>
     )
 }
