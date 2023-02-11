@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import css from "./Header.module.scss";
+
+//hook
+import useWindowSize from '@/hooks/useWindowSize';
 
 //router
 import Link from 'next/link';
@@ -19,6 +22,10 @@ import LinkedinIcon from "svg/linkedin-icon.svg";
 
 const Header = () => {
 
+    const windowSize = useWindowSize();
+    const isMobile = useMemo(() => windowSize && windowSize < 768, [windowSize]);
+    console.log("isMobile", isMobile)
+
     const icons = [
         { name: "home", icon: <HomeIcon />, route: "/" },
         { name: "about", icon: <AboutIcon />, route: "/about" },
@@ -29,10 +36,12 @@ const Header = () => {
 
     return (
         <div className={css.container}>
-            <div className={css.logoWrapper}>
-                <h1> V</h1>
-                <p>Vladimir</p>
-            </div>
+            {!isMobile &&
+                <div className={css.logoWrapper}>
+                    <h1> V</h1>
+                    <p>Vladimir</p>
+                </div>
+            }
             <div className={css.linksWrapper}>
                 {icons.map((item, index) => (
                     <HeaderIcon
