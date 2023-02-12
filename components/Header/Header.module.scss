@@ -77,3 +77,44 @@
         }
     }
 }
+
+.mobileHeader {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5rem;
+    background-color: $color-black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+    h1 {
+        color: $color-white;
+        color: $color-gold;
+        font-size: 3rem;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+
+    .socialMedia {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+
+            path {
+                fill: $color-gray;
+            }
+        }
+
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+}
