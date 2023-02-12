@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import css from "./Header.module.scss";
 
 //hook
@@ -9,6 +9,8 @@ import Link from 'next/link';
 
 //components
 import HeaderIcon from './HeaderIcon/HeaderIcon';
+import Backdrop from '../Backdrop/Backdrop';
+import ProfileImage from './ProfileImage/ProfileImage';
 
 //assets
 import HomeIcon from "svg/home.svg";
@@ -25,6 +27,8 @@ const Header = () => {
 
     const windowSize = useWindowSize();
     const isMobile = useMemo(() => windowSize && windowSize < 768, [windowSize]);
+
+    const [profileFullView, setProfileFullView] = useState(false);
 
     const icons = [
         { name: "home", icon: <HomeIcon />, route: "/" },
@@ -72,9 +76,14 @@ const Header = () => {
                         <Link href="https://www.linkedin.com/in/vladimir-timotijevic" target="_blank">
                             <LinkedinIcon />
                         </Link>
-                        <img src={ProfilePhoto.src} alt="profile" />
+                        <img src={ProfilePhoto.src} alt="profile" onClick={() => setProfileFullView(true)} />
                     </div>
                 </header>
+            }
+            {profileFullView &&
+                <Backdrop closeAction={() => setProfileFullView(false)}>
+                    <ProfileImage closeAction={() => setProfileFullView(false)}/>
+                </Backdrop>
             }
         </>
     )

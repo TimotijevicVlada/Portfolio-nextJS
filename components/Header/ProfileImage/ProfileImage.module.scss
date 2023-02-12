@@ -1,0 +1,26 @@
+@import "styles/main.module.scss";
+
+.container {
+    width: 100%;
+    position: relative;
+
+    .closeWrapper {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        display: flex;
+
+        svg {
+            width: 2.2rem;
+            height: 2.2rem;
+
+            path {
+                stroke: $color-white;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+}

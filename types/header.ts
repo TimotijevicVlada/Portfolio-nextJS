@@ -7,3 +7,7 @@ interface ItemProps {
 export interface HeaderIconProps {
     item: ItemProps;
 }
+
+export interface ProfileImageProps {
+    closeAction: () => void;
+} 
