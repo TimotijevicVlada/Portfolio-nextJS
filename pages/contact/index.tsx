@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+//component
+import Contact from '@/components/Contact/Contact';
 
 const index = () => {
   return (
-    <div>index</div>
+    <div>
+      <Contact />
+    </div>
   )
 }
 

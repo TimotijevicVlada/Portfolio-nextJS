@@ -30,3 +30,16 @@ button {
     border: none;
     cursor: pointer;
 }
+
+input, textarea {
+    background-color: transparent;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}

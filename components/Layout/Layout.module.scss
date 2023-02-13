@@ -3,4 +3,9 @@
 .container {
     background-color: $color-primary;
     height: 100vh;
+    padding-left: 4rem;
+
+    @include respond(phone) {
+        padding-left: unset;
+    }
 }
