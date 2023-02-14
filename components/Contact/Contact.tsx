@@ -8,6 +8,7 @@ const Contact = () => {
     return (
         <div className={css.container}>
             <div className={css.contactWrapper}>
+                <h1>Contact me</h1>
                 <ContactForm />
             </div>
             <div className={css.mapWrapper}>RIGHT SIDE</div>

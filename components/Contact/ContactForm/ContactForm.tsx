@@ -4,6 +4,7 @@ import emailjs from "emailjs-com";
 
 //assets
 import ExclamationMark from "svg/exclamation_mark.svg";
+import CheckMark from "svg/check-mark.svg";
 
 //types
 import { DataProps } from '@/types/contact';
@@ -15,6 +16,7 @@ const ContactForm = () => {
     const [data, setData] = useState<DataProps>({ name: "", email: "", subject: "", description: "" });
     const [errors, setErrors] = useState<DataProps>({ name: "", email: "", subject: "", description: "" });
     const [changeError, setChangeError] = useState(false);
+    const [messageSent, setMessageSent] = useState(false);
 
     useEffect(() => {
         if (!changeError) return;
@@ -29,10 +31,10 @@ const ContactForm = () => {
 
     const handleErrors = () => {
         let tempErorrs = {} as DataProps;
-        if (!data.name.trim()) tempErorrs = { ...tempErorrs, name: "Name is required!" }
-        if (!data.email.trim()) tempErorrs = { ...tempErorrs, email: "Email is required!" }
-        if (!data.subject.trim()) tempErorrs = { ...tempErorrs, subject: "Subject is required!" }
-        if (!data.description.trim()) tempErorrs = { ...tempErorrs, description: "Description is required!" }
+        if (!data.name.trim()) tempErorrs = { ...tempErorrs, name: "Name is required" }
+        if (!data.email.trim()) tempErorrs = { ...tempErorrs, email: "Email is required" }
+        if (!data.subject.trim()) tempErorrs = { ...tempErorrs, subject: "Subject is required" }
+        if (!data.description.trim()) tempErorrs = { ...tempErorrs, description: "Description is required" }
         setErrors(tempErorrs);
         const checkErrors = Object.values(tempErorrs);
         return !!checkErrors.length;
@@ -44,12 +46,13 @@ const ContactForm = () => {
         console.log("HAS ERRORS", hasErrors);
         if (hasErrors) return;
         emailjs.sendForm("service_n58a1zi", "template_95entcp", formRef.current, "user_jWZd2H9LGZAs9mcY4SUYH")
-            .then(
-                (result) => {
-                    console.log(result.text);
-                    //   setMessage(true);
-                    //   closeMessage();
-                },
+            .then((result) => {
+                setMessageSent(true);
+                const timeout = setTimeout(() => {
+                    setMessageSent(false);
+                }, 3000)
+                return () => clearTimeout(timeout)
+            },
                 (error) => {
                     console.log(error.text);
                 }
@@ -119,6 +122,12 @@ const ContactForm = () => {
             <div className={css.buttonWrapper}>
                 <button type='submit'>Send</button>
             </div>
+            {messageSent &&
+                <div className={css.messageSent}>
+                    <CheckMark />
+                    Sent
+                </div>
+            }
         </form>
     )
 }

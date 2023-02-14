@@ -5,9 +5,20 @@
     grid-template-columns: repeat(2, 1fr);
     height: 100vh;
 
+    @include respond(phone) {
+        min-height: 100vh;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .contactWrapper {
-        display: grid;
-        place-items: center;
+       @include centerElement;
+       flex-direction: column;
+       gap: 2rem;
+
+       h1 {
+        color: $color-gold;
+        font-weight: 300;
+       }
     }
 
     .mapWrapper {
