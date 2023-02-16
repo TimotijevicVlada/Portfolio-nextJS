@@ -6,6 +6,9 @@
     padding-left: 4rem;
 
     @include respond(phone) {
+        height: unset;
+        min-height: 100vh;
         padding-left: unset;
+        padding-bottom: 4rem;
     }
 }

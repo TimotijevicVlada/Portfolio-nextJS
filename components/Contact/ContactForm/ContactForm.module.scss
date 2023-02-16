@@ -1,15 +1,11 @@
 @import "styles/main.module.scss";
 
 .form {
-    width: 35rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     position: relative;
-
-    @include respond(phone) {
-        width: calc(100% - 1.5rem);
-    }
 
     .personalInfoWrapper {
         display: grid;

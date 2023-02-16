@@ -12,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem 0rem;
+    z-index: 10;
 
     @include respond(phone) {
         top: unset;
@@ -89,6 +90,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    z-index: 10;
 
     h1 {
         color: $color-white;
