@@ -1,0 +1,13 @@
+@import "styles/main.module.scss";
+
+.container {
+    width: 60rem;
+
+    @include respond(phone) {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+}
