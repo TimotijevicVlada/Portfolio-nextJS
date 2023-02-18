@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+//components
+import Projects from '@/components/Projects/Projects';
 
 const index = () => {
   return (
-    <div>index</div>
+    <div>
+      <Projects />
+    </div>
   )
 }
 
