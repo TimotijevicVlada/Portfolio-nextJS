@@ -6,7 +6,7 @@ import { SingleProjectProps } from '@/types/projects';
 
 const SingleProject: FC<SingleProjectProps> = ({ item }) => {
     return (
-        <div className={css.container}>
+        <div className={css.container} onClick={(e) => e.stopPropagation()}>
             <img src={item.src} alt={item.name} />
         </div>
     )

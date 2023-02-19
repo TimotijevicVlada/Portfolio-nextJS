@@ -2,8 +2,22 @@ import React, { useState, useEffect } from 'react';
 import css from "./Projects.module.scss";
 
 //assets
-import Jetwild from "images/jetwild.png";
-import Fitcher from "images/fitcher.png";
+import Jetwild from "images/jetwild/jetwild.png";
+import Fitcher from "images/fitcher/fitcher.png";
+import Skills from "images/skills_app/skillsApp.png";
+import Budget from "images/budget/budget.png";
+import Pizza from "images/pizza_bar/home.png";
+import Quiz from "images/quizapp/quiz.png";
+import Github from "images/github/home.png";
+import Recipe from "images/recipeapp/recipe.png";
+import Shirt from "images/shirtshop/home.png";
+import Coffee from "images/coffeeshop/home.png";
+import GameOfThrones from "images/gameofthrones/home.png";
+import Forecast from "images/forecast/home.png";
+import Todo from "images/todo/home.png";
+import Ranking from "images/ranking/home.png";
+import FurnitureShop from "images/furnitureshop/home.png";
+import Crypto from "images/crypto/home.png";
 
 //components
 import Backdrop from "../Backdrop/Backdrop";
@@ -17,20 +31,20 @@ const Projects = () => {
     const projects = [
         { name: "Jetwild", src: Jetwild.src },
         { name: "Fitcher", src: Fitcher.src },
-        { name: "Jetwild", src: Jetwild.src },
-        { name: "Fitcher", src: Fitcher.src },
-        { name: "Jetwild", src: Jetwild.src },
-        { name: "Fitcher", src: Fitcher.src },
-        { name: "Jetwild", src: Jetwild.src },
-        { name: "Fitcher", src: Fitcher.src },
-        { name: "Jetwild", src: Jetwild.src },
-        { name: "Fitcher", src: Fitcher.src },
-        { name: "Jetwild", src: Jetwild.src },
-        { name: "Fitcher", src: Fitcher.src },
-        { name: "Jetwild", src: Jetwild.src },
-        { name: "Fitcher", src: Fitcher.src },
-        { name: "Jetwild", src: Jetwild.src },
-        { name: "Fitcher", src: Fitcher.src },
+        { name: "Skills", src: Skills.src },
+        { name: "Budget", src: Budget.src },
+        { name: "Pizza", src: Pizza.src },
+        { name: "Quiz", src: Quiz.src },
+        { name: "Github", src: Github.src },
+        { name: "Recipe", src: Recipe.src },
+        { name: "Shirt", src: Shirt.src },
+        { name: "Coffee", src: Coffee.src },
+        { name: "GameOfThrones", src: GameOfThrones.src },
+        { name: "Forecast", src: Forecast.src },
+        { name: "Todo", src: Todo.src },
+        { name: "Ranking", src: Ranking.src },
+        { name: "FurnitureShop", src: FurnitureShop.src },
+        { name: "Crypto", src: Crypto.src },
     ]
 
     const [fullView, setFullView] = useState<ProjectProps | null>(null);
