@@ -34,9 +34,8 @@ const Projects = () => {
             </div>
             <div className={css.projects}>
                 {projects.map((item, index) => (
-                    <div className={css.imgWrapper}>
+                    <div key={index} className={css.imgWrapper}>
                         <img
-                            key={index}
                             src={item.src}
                             alt={item.name}
                             onClick={() => setFullView(item)}
