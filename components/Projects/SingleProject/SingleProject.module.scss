@@ -18,10 +18,12 @@
             width: 100%;
         }
 
-        .ArrowLeft {
+        .ArrowLeft,
+        .ArrowRight {
             position: absolute;
             top: 50%;
             left: 1rem;
+            transform: translateY(-50%);
             z-index: 10;
             cursor: pointer;
 
@@ -36,20 +38,8 @@
         }
 
         .ArrowRight {
-            position: absolute;
-            top: 50%;
+            left: unset;
             right: 1rem;
-            z-index: 10;
-            cursor: pointer;
-
-            svg {
-                width: 2rem;
-                height: 2rem;
-
-                path {
-                    fill: $color-gold;
-                }
-            }
         }
     }
 }
