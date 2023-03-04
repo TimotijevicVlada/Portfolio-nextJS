@@ -12,6 +12,7 @@
 
         @include respond(phone) {
             width: 100%;
+            position: unset;
         }
 
         img {
@@ -22,10 +23,15 @@
         .ArrowRight {
             position: absolute;
             top: 50%;
-            left: 1rem;
+            left: -4rem;
             transform: translateY(-50%);
             z-index: 10;
             cursor: pointer;
+            background-color: $color-gray;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            @include centerElement;
 
             svg {
                 width: 2rem;
@@ -39,7 +45,38 @@
 
         .ArrowRight {
             left: unset;
-            right: 1rem;
+            right: -4rem;
+        }
+
+        ul {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            width: auto;
+    
+            li {
+                margin: 0 -0.1rem;
+                button {
+                    &::before {
+                        font-size: 0.8rem;
+                        color: #fff;
+                        opacity: 0.4;
+                    }
+                }
+            }
+    
+            li[class="slick-active"] {
+                button {
+                    &:before {
+                        font-size: 0.8rem;
+                        color: $color-gold;
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }

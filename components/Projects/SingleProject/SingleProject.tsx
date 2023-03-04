@@ -2,6 +2,9 @@ import React, { FC, useRef } from 'react';
 import css from "./SingleProject.module.scss";
 import Slider from "react-slick";
 
+//mui 
+import Fade from '@mui/material/Fade';
+
 //hooks
 import useWindowSize from '@/hooks/useWindowSize';
 
@@ -61,13 +64,16 @@ const SingleProject: FC<SingleProjectProps> = ({ item }) => {
     };
 
     return (
-        <div className={css.container} onClick={(e) => e.stopPropagation()}>
-            <Slider ref={sliderRef} {...slickSettings}>
-                <img src={item.src} alt={item.name} />
-                <img src={item.src} alt={item.name} />
-                <img src={item.src} alt={item.name} />
-            </Slider>
-        </div>
+        <Fade in={true}>
+            <div className={css.container} onClick={(e) => e.stopPropagation()}>
+                <Slider ref={sliderRef} {...slickSettings}>
+                    <img src={item.src} alt={item.name} />
+                    <img src={item.src} alt={item.name} />
+                    <img src={item.src} alt={item.name} />
+                </Slider>
+            </div>
+        </Fade>
+
     )
 }
 
