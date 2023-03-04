@@ -1,0 +1,26 @@
+@import "styles/main.module.scss";
+
+.icon {
+    background-color: $color-gray;
+    border-radius: 3rem;
+    padding: 0.5rem 1rem;
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond(phone) {
+        width: 100%;
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    span {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: $color-white;
+    }
+}

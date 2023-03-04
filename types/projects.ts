@@ -9,3 +9,8 @@ export interface SingleProjectProps {
         src: string;
     }
 }
+
+export interface AppTechProps {
+    children: React.ReactNode,
+    name: string;
+}
