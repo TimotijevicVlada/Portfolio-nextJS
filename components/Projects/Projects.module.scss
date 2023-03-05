@@ -18,7 +18,7 @@
 
         .info {
             opacity: 0;
-            animation: slideLeft 1s ease forwards;
+            animation: slideBottom 1s ease forwards;
 
             h1 {
                 color: $color-gold;
@@ -40,8 +40,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 0.5rem;
-            opacity: 0;
-            animation: slideTop 1s ease forwards;
 
             @include respond(phone) {
                 width: 100%;
@@ -106,6 +104,18 @@
 @keyframes slideTop {
     0% {
         transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
         opacity: 0;
     }
 

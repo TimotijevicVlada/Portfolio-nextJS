@@ -5,6 +5,7 @@ import css from "./AppTech.module.scss";
 import { AppTechProps } from '@/types/projects';
 
 const AppTech: React.FC<AppTechProps> = ({ children, name }) => {
+
     return (
         <div className={css.icon}>
             {children}
