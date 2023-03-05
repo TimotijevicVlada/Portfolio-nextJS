@@ -1,12 +1,13 @@
 import React from 'react';
 import Head from "next/head";
+import css from "./index.module.scss";
 
 //components
 import Projects from '@/components/Projects/Projects';
 
 const index = () => {
   return (
-    <>
+    <div className={css.container}>
       <Head>
         <link
           rel="stylesheet"
@@ -20,7 +21,7 @@ const index = () => {
         />
       </Head>
       <Projects />
-    </>
+    </div>
   )
 }
 

@@ -9,6 +9,24 @@ import CheckMark from "svg/check-mark.svg";
 //types
 import { DataProps } from '@/types/contact';
 
+//mui
+import Snackbar from '@mui/material/Snackbar';
+import Slide, { SlideProps } from '@mui/material/Slide';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+
+type TransitionProps = Omit<SlideProps, 'direction'>;
+
+function TransitionRight(props: TransitionProps) {
+    return <Slide {...props} direction="right" />;
+}
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref,
+) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 const ContactForm = () => {
 
     const formRef = useRef() as any;
@@ -17,6 +35,16 @@ const ContactForm = () => {
     const [errors, setErrors] = useState<DataProps>({ name: "", email: "", subject: "", description: "" });
     const [changeError, setChangeError] = useState(false);
     const [messageSent, setMessageSent] = useState(false);
+    const [open, setOpen] = React.useState(false);
+    const [transition, setTransition] = useState<React.ComponentType<TransitionProps> | undefined>(undefined);
+
+    const handleClick = (Transition: React.ComponentType<TransitionProps>) => () => {
+        setTransition(() => Transition);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     useEffect(() => {
         if (!changeError) return;
@@ -37,13 +65,16 @@ const ContactForm = () => {
         if (!data.description.trim()) tempErorrs = { ...tempErorrs, description: "Description is required" }
         setErrors(tempErorrs);
         const checkErrors = Object.values(tempErorrs);
+        if (!!checkErrors.length) {
+            handleClick(TransitionRight);
+            setOpen(true);
+        }
         return !!checkErrors.length;
     }
 
     const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
         e.preventDefault();
         const hasErrors = handleErrors();
-        console.log("HAS ERRORS", hasErrors);
         if (hasErrors) return;
         emailjs.sendForm("service_n58a1zi", "template_95entcp", formRef.current, "user_jWZd2H9LGZAs9mcY4SUYH")
             .then((result) => {
@@ -128,6 +159,16 @@ const ContactForm = () => {
                     Sent
                 </div>
             }
+            <Snackbar
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={transition}
+                autoHideDuration={4000}
+            >
+                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                    All inputs are required
+                </Alert>
+            </Snackbar>
         </form>
     )
 }

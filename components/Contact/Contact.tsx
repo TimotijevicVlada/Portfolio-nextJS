@@ -17,7 +17,7 @@ const Contact = () => {
                 <div className={css.contactInner}>
                     <h1>Contact me</h1>
                     <p className={css.subHeader}>
-                        If you have any request or question, don't hesistate to contact me using bellow form either.
+                        {"If you have any request or question, don't hesistate to contact me using bellow form either."}
                     </p>
                     <ContactForm />
                 </div>
