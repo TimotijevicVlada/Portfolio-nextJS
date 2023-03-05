@@ -2,10 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import css from "./ContactForm.module.scss";
 import emailjs from "emailjs-com";
 
-//assets
-import ExclamationMark from "svg/exclamation_mark.svg";
-import CheckMark from "svg/check-mark.svg";
-
 //types
 import { DataProps } from '@/types/contact';
 
@@ -35,15 +31,11 @@ const ContactForm = () => {
     const [errors, setErrors] = useState<DataProps>({ name: "", email: "", subject: "", description: "" });
     const [changeError, setChangeError] = useState(false);
     const [messageSent, setMessageSent] = useState(false);
-    const [open, setOpen] = React.useState(false);
+    const [errorSnackbar, setErrorSnackbar] = useState(false);
     const [transition, setTransition] = useState<React.ComponentType<TransitionProps> | undefined>(undefined);
 
     const handleClick = (Transition: React.ComponentType<TransitionProps>) => () => {
         setTransition(() => Transition);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
     };
 
     useEffect(() => {
@@ -60,6 +52,7 @@ const ContactForm = () => {
     const handleErrors = () => {
         let tempErorrs = {} as DataProps;
         if (!data.name.trim()) tempErorrs = { ...tempErorrs, name: "Name is required" }
+        if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(data.email))) tempErorrs = { ...tempErorrs, email: "Email is incorrect" }
         if (!data.email.trim()) tempErorrs = { ...tempErorrs, email: "Email is required" }
         if (!data.subject.trim()) tempErorrs = { ...tempErorrs, subject: "Subject is required" }
         if (!data.description.trim()) tempErorrs = { ...tempErorrs, description: "Description is required" }
@@ -67,7 +60,7 @@ const ContactForm = () => {
         const checkErrors = Object.values(tempErorrs);
         if (!!checkErrors.length) {
             handleClick(TransitionRight);
-            setOpen(true);
+            setErrorSnackbar(true);
         }
         return !!checkErrors.length;
     }
@@ -79,10 +72,6 @@ const ContactForm = () => {
         emailjs.sendForm("service_n58a1zi", "template_95entcp", formRef.current, "user_jWZd2H9LGZAs9mcY4SUYH")
             .then((result) => {
                 setMessageSent(true);
-                const timeout = setTimeout(() => {
-                    setMessageSent(false);
-                }, 3000)
-                return () => clearTimeout(timeout)
             },
                 (error) => {
                     console.log(error.text);
@@ -106,7 +95,6 @@ const ContactForm = () => {
                         }}
                     />
                     {errors.name && <p className={css.error}>{errors.name}</p>}
-                    {errors.name && <ExclamationMark className={css.exclamationMark} />}
                 </div>
                 <div className={css.emailWrapper}>
                     <input
@@ -120,7 +108,6 @@ const ContactForm = () => {
                         }}
                     />
                     {errors.email && <p className={css.error}>{errors.email}</p>}
-                    {errors.email && <ExclamationMark className={css.exclamationMark} />}
                 </div>
             </div>
             <div className={css.subjectWrapper}>
@@ -135,7 +122,6 @@ const ContactForm = () => {
                     }}
                 />
                 {errors.subject && <p className={css.error}>{errors.subject}</p>}
-                {errors.subject && <ExclamationMark className={css.exclamationMark} />}
             </div>
             <div className={css.textareaWrapper}>
                 <textarea
@@ -148,25 +134,37 @@ const ContactForm = () => {
                     }}
                 />
                 {errors.description && <p className={css.error}>{errors.description}</p>}
-                {errors.description && <ExclamationMark className={css.exclamationMark} />}
             </div>
             <div className={css.buttonWrapper}>
                 <button type='submit'>Send</button>
             </div>
-            {messageSent &&
-                <div className={css.messageSent}>
-                    <CheckMark />
-                    Sent
-                </div>
-            }
             <Snackbar
-                open={open}
-                onClose={handleClose}
+                open={errorSnackbar}
+                onClose={() => setErrorSnackbar(false)}
                 TransitionComponent={transition}
                 autoHideDuration={4000}
             >
-                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                <Alert
+                    onClose={() => setErrorSnackbar(false)}
+                    severity="error"
+                    sx={{ width: '100%' }}
+                >
                     All inputs are required
+                </Alert>
+            </Snackbar>
+
+            <Snackbar
+                open={messageSent}
+                onClose={() => setMessageSent(false)}
+                TransitionComponent={transition}
+                autoHideDuration={4000}
+            >
+                <Alert
+                    onClose={() => setMessageSent(false)}
+                    severity="success"
+                    sx={{ width: '100%' }}
+                >
+                    Message successfully sent
                 </Alert>
             </Snackbar>
         </form>

@@ -36,18 +36,6 @@
                 top: 3rem;
                 font-weight: 600;
             }
-
-            .exclamationMark {
-                position: absolute;
-                right: 0.5rem;
-                top: 0.7rem;
-                width: 1.6rem;
-                height: 1.6rem;
-
-                path {
-                    fill: $color-red;
-                }
-            }
         }
 
         .emailWrapper {
@@ -79,18 +67,6 @@
             top: 3rem;
             font-weight: 600;
         }
-
-        .exclamationMark {
-            position: absolute;
-            right: 0.5rem;
-            top: 0.7rem;
-            width: 1.6rem;
-            height: 1.6rem;
-
-            path {
-                fill: $color-red;
-            }
-        }
     }
 
     .textareaWrapper {
@@ -118,18 +94,6 @@
             top: 11rem;
             font-weight: 600;
         }
-
-        .exclamationMark {
-            position: absolute;
-            right: 0.5rem;
-            top: 0.7rem;
-            width: 1.6rem;
-            height: 1.6rem;
-
-            path {
-                fill: $color-red;
-            }
-        }
     }
 
     .buttonWrapper {
@@ -153,48 +117,5 @@
                 color: $color-black;
             }
         }
-    }
-
-    .messageSent {
-        height: 3rem;
-        @include absoluteCenter;
-        @include centerElement;
-        gap: 1rem;
-        background-color: $color-gray;
-        width: 7rem;
-        border-radius: 0.6rem;
-        color: $color-gold;
-        font-size: 1.1rem;
-
-        svg {
-            width: 1.8rem;
-            height: 1.8rem;
-            stroke: $color-gold;
-        }
-    }
-}
-
-/*KEYFRAMES ANIMATION*/
-@keyframes slideLeft {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideTop {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
     }
 }
