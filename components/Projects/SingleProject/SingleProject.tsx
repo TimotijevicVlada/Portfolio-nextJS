@@ -67,9 +67,9 @@ const SingleProject: FC<SingleProjectProps> = ({ item }) => {
         <Fade in={true}>
             <div className={css.container} onClick={(e) => e.stopPropagation()}>
                 <Slider ref={sliderRef} {...slickSettings}>
-                    <img src={item.src} alt={item.name} />
-                    <img src={item.src} alt={item.name} />
-                    <img src={item.src} alt={item.name} />
+                    {item.images.map((img, index) => (
+                        <img key={index} src={img} alt={item.name} />
+                    ))}
                 </Slider>
             </div>
         </Fade>

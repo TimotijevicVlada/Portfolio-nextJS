@@ -52,8 +52,11 @@ const ContactForm = () => {
     const handleErrors = () => {
         let tempErorrs = {} as DataProps;
         if (!data.name.trim()) tempErorrs = { ...tempErorrs, name: "Name is required" }
-        if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(data.email))) tempErorrs = { ...tempErorrs, email: "Email is incorrect" }
-        if (!data.email.trim()) tempErorrs = { ...tempErorrs, email: "Email is required" }
+        if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(data.email))) {
+            tempErorrs = { ...tempErorrs, email: "Email is incorrect" }
+        } else if (!data.email.trim()) {
+            tempErorrs = { ...tempErorrs, email: "Email is required" }
+        }
         if (!data.subject.trim()) tempErorrs = { ...tempErorrs, subject: "Subject is required" }
         if (!data.description.trim()) tempErorrs = { ...tempErorrs, description: "Description is required" }
         setErrors(tempErorrs);

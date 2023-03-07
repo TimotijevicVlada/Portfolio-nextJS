@@ -27,6 +27,7 @@ import NPMicon from "svg/npm-icon.svg";
 import MUIicon from "svg/mui.svg";
 import CSSicon from "svg/css.svg";
 import GITicon from "svg/git.svg";
+import RQuery from "svg/react_query.svg";
 
 const Projects = () => {
 
@@ -37,6 +38,7 @@ const Projects = () => {
         { name: "JavaScript", icon: <JSicon /> },
         { name: "TypeScript", icon: <TSicon /> },
         { name: "React", icon: <ReactIcon /> },
+        { name: "React Query", icon: <RQuery /> },
         { name: "Redux", icon: <ReduxIcon /> },
         { name: "Next.js", icon: <NextIcon /> },
         { name: "MaterialUI", icon: <MUIicon /> },
@@ -84,10 +86,13 @@ const Projects = () => {
                     >
                         <div className={css.imgWrapper}>
                             <img
-                                src={item.src}
+                                src={item.images[0]}
                                 alt={item.name}
                                 onClick={() => setFullView(item)}
                             />
+                            <div className={css.nameInfo}>
+                                {item.name}
+                            </div>
                         </div>
                     </Zoom>
                 ))}

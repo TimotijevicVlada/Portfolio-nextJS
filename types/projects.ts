@@ -1,12 +1,12 @@
 export interface ProjectProps {
     name: string;
-    src: string;
+    images: string[];
 }[]
 
 export interface SingleProjectProps {
     item: {
         name: string;
-        src: string;
+        images: string[];
     }
 }
 

@@ -8,7 +8,7 @@
     @include respond(phone) {
         grid-template-columns: repeat(1, 1fr);
         gap: 2rem;
-        padding: 1rem 0.5rem
+        padding: 1rem 0.5rem;
     }
 
     .projectsInfo {
@@ -41,6 +41,11 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: 0.5rem;
 
+            img {
+                width: 2rem;
+                height: 2rem;
+            }
+
             @include respond(phone) {
                 width: 100%;
                 grid-template-columns: 1fr 1fr;
@@ -60,6 +65,7 @@
             width: 100%;
             overflow: hidden;
             display: flex;
+            position: relative;
 
             img {
                 width: 100%;
@@ -70,6 +76,24 @@
 
                 &:hover {
                     transform: scale(1.1);
+                }
+            }
+
+            .nameInfo {
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                right: 0;
+                background-color: $color-background;
+                color: $color-white;
+                height: 3rem;
+                @include centerElement;
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+                .nameInfo {
+                    bottom: 0;
                 }
             }
         }
