@@ -35,16 +35,15 @@
 /*RESPONSIVE BREAKPOINTS*/
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media only screen and (max-width: 47.9375em) {
-            // Calculate em px / 16, example 600 / 16 = 37.5
+        @media only screen and (max-width: 767px) {
             @content;
-        } //767px
+        }
     }
 
     @if $breakpoint == overPhone {
-        @media only screen and (min-width: 48em) {
+        @media only screen and (min-width: 768px) {
             @content;
-        } //768px
+        }
     }
 }
 

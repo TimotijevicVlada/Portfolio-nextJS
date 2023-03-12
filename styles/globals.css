@@ -11,6 +11,11 @@
     font-family: 'Courier New', Courier, monospace;
 } */
 
+html {
+    /* 1rem = 16px, (16*100)/100 = 16 */
+    font-size: 100%;
+}
+
 body::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;
@@ -31,7 +36,8 @@ button {
     cursor: pointer;
 }
 
-input, textarea {
+input,
+textarea {
     background-color: transparent;
     border: none;
 }
@@ -42,4 +48,33 @@ input:focus {
 
 textarea:focus {
     outline: none;
+}
+
+/*Defining what is the size of REM*/
+@media only screen and (max-width: 1550px) {
+    html {
+        /* 1rem = 12.8px, (16*80)/100 = 12.8 */
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    html {
+        /* 1rem = 11.2px, (16*70)/100 = 11.2 */
+        font-size: 70%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    html {
+        /* 1rem = 9.6px, (16*60)/100 = 9.6 */
+        font-size: 60%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        /* 1rem = 16px, (16*100)/100 = 16 */
+        font-size: 100%;
+    }
 }

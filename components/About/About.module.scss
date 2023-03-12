@@ -52,8 +52,8 @@
         }
 
         .box {
-            height: 20rem;
-            width: 20rem;
+            height: 18rem;
+            width: 18rem;
             transform-style: preserve-3d;
             animation: animateQube 7s infinite;
 
@@ -63,10 +63,10 @@
             }
 
             .card {
-                width: 20rem;
-                height: 20rem;
+                width: 18rem;
+                height: 18rem;
                 @include centerElement;
-                padding: 10rem 0rem;
+                padding: 9rem 0rem;
                 background-color: rgba(250, 250, 250, 0.2);
                 border: 0.1rem solid rgba(255, 255, 255, 0.4);
                 position: absolute;
@@ -79,8 +79,8 @@
                 }
 
                 svg {
-                    width: 10rem;
-                    height: 10rem;
+                    width: 8rem;
+                    height: 8rem;
 
                     @include respond(phone) {
                         height: 5rem;
@@ -89,42 +89,42 @@
                 }
 
                 &.frontActive {
-                    transform: translateZ(15rem) rotateY(360deg) !important;
+                    transform: translateZ(13rem) rotateY(360deg) !important;
 
                     @include respond(phone) {
                         transform: translateZ(7.5rem) rotateY(360deg) !important;
                     }
                 }
                 &.backActive {
-                    transform: translateZ(-15rem) rotateY(360deg) !important;
+                    transform: translateZ(-13rem) rotateY(360deg) !important;
 
                     @include respond(phone) {
                         transform: translateZ(-7.5rem) rotateY(360deg) !important;
                     }
                 }
                 &.leftActive {
-                    right: 15rem !important;
+                    right: 13rem !important;
 
                     @include respond(phone) {
                         right: 7.5rem !important;
                     }
                 }
                 &.rightActive {
-                    left: 15rem !important;
+                    left: 13rem !important;
 
                     @include respond(phone) {
                         left: 7.5rem !important;
                     }
                 }
                 &.topActive {
-                    bottom: 15rem !important;
+                    bottom: 13rem !important;
 
                     @include respond(phone) {
                         bottom: 7.5rem !important;
                     }
                 }
                 &.bottomActive {
-                    top: 15rem !important;
+                    top: 13rem !important;
 
                     @include respond(phone) {
                         top: 7.5rem !important;
@@ -133,7 +133,7 @@
             }
 
             #front {
-                transform: translateZ(10rem);
+                transform: translateZ(9rem);
 
                 @include respond(phone) {
                     transform: translateZ(5rem);
@@ -141,7 +141,7 @@
             }
 
             #back {
-                transform: translateZ(-10rem);
+                transform: translateZ(-9rem);
 
                 @include respond(phone) {
                     transform: translateZ(-5rem);
@@ -149,7 +149,7 @@
             }
 
             #left {
-                right: 10rem;
+                right: 9rem;
                 transform: rotateY(-90deg);
 
                 @include respond(phone) {
@@ -158,7 +158,7 @@
             }
 
             #right {
-                left: 10rem;
+                left: 9rem;
                 transform: rotateY(90deg);
 
                 @include respond(phone) {
@@ -167,7 +167,7 @@
             }
 
             #top {
-                bottom: 10rem;
+                bottom: 9rem;
                 transform: rotateX(90deg);
 
                 @include respond(phone) {
@@ -176,7 +176,7 @@
             }
 
             #bottom {
-                top: 10rem;
+                top: 9rem;
                 transform: rotateX(-90deg);
 
                 @include respond(phone) {
