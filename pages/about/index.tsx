@@ -1,9 +1,14 @@
 import React from 'react';
 import css from "./index.module.scss";
 
+//components
+import About from '@/components/About/About';
+
 const index = () => {
   return (
-    <div>index</div>
+    <div>
+      <About />
+    </div>
   )
 }
 
