@@ -82,7 +82,7 @@ const Header = () => {
             }
             {profileFullView &&
                 <Backdrop closeAction={() => setProfileFullView(false)}>
-                    <ProfileImage closeAction={() => setProfileFullView(false)}/>
+                    <ProfileImage closeAction={() => setProfileFullView(false)} />
                 </Backdrop>
             }
         </>

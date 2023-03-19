@@ -1,9 +1,12 @@
 import css from "./index.module.scss";
 
-export default function Home() {
+//components
+import Home from "@/components/Home/Home";
+
+export default function HomePage() {
   return (
     <div className={css.container}>
-      Hellooo
+      <Home />
     </div>
   )
 }
