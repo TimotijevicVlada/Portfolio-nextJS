@@ -14,7 +14,7 @@ const Home = () => {
       <div className={css.section}>
         <div className={css.leftSideContainer}>
           <h1>
-            Hi, <br /> I am Vladimir,<br />  full-stack developer.
+            Hi, <br /> I am Vladimir,<br />  full-stack web developer.
           </h1>
           <p>JavaScript expert | React developer | Node.js developer</p>
           <button onClick={() => router.push("/contact")}>Contact me</button>

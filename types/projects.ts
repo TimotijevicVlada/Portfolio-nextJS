@@ -13,4 +13,5 @@ export interface SingleProjectProps {
 export interface AppTechProps {
     children: React.ReactNode,
     name: string;
+    index: number;
 }

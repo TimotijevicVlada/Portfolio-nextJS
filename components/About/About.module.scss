@@ -22,6 +22,8 @@
                 font-weight: 300;
                 color: $color-gold;
                 margin-bottom: 0.5rem;
+                opacity: 0;
+                animation: slideBottom 1s ease forwards;
 
                 @include respond(phone) {
                     text-align: center;
@@ -33,10 +35,12 @@
                 width: 30rem;
                 color: $color-white;
                 line-height: 1.5rem;
+                opacity: 0;
+                animation: slideTop 1s ease forwards;
 
                 @include respond(phone) {
                     width: 100%;
-                    padding: 0 0.7rem
+                    padding: 0 0.7rem;
                 }
             }
         }

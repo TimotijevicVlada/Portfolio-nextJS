@@ -66,6 +66,7 @@ const Projects = () => {
                         <AppTech
                             key={index}
                             name={item.name}
+                            index={index}
                         >
                             {item.icon}
                         </AppTech>

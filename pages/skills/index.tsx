@@ -1,8 +1,17 @@
+import Skills from '@/components/Skills/Skills';
+import Head from 'next/head';
 import React from 'react'
 
 const index = () => {
   return (
-    <div>index</div>
+    <>
+      <Head>
+        <title>Portfolio | Skills</title>
+      </Head>
+      <div>
+        <Skills />
+      </div>
+    </>
   )
 }
 

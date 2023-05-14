@@ -22,7 +22,6 @@
             @include respond(phone) {
                 width: calc(100% - 1.5rem);
             }
-
             h1 {
                 color: $color-gold;
                 font-weight: 300;
