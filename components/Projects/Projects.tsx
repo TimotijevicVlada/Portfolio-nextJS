@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import css from "./Projects.module.scss";
 
-//mui
-import Zoom from '@mui/material/Zoom';
-
 //components
 import Backdrop from "../Backdrop/Backdrop";
 import SingleProject from './SingleProject/SingleProject';
@@ -77,24 +74,16 @@ const Projects = () => {
             </div>
             <div className={css.projects}>
                 {projects.map((item, index) => (
-                    <Zoom
-                        key={index}
-                        in={true}
-                        style={{
-                            transitionDelay: `${index * 130}ms`,
-                        }}
-                    >
-                        <div className={css.imgWrapper}>
-                            <img
-                                src={item.images[0]}
-                                alt={item.name}
-                                onClick={() => setFullView(item)}
-                            />
-                            <div className={css.nameInfo}>
-                                {item.name}
-                            </div>
+                    <div className={css.imgWrapper} key={index}>
+                        <img
+                            src={item.images[0]}
+                            alt={item.name}
+                            onClick={() => setFullView(item)}
+                        />
+                        <div className={css.nameInfo}>
+                            {item.name}
                         </div>
-                    </Zoom>
+                    </div>
                 ))}
             </div>
             {!!fullView &&

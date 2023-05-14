@@ -2,6 +2,9 @@ import React from 'react';
 import css from "./Home.module.scss";
 import { useRouter } from 'next/router';
 
+//assets
+import ProfileImage from "../../images/profile_image/profile_photo.jpg";
+
 const Home = () => {
 
   const router = useRouter();
@@ -11,13 +14,17 @@ const Home = () => {
       <div className={css.section}>
         <div className={css.leftSideContainer}>
           <h1>
-            Hi, <br /> I am Vladimir,<br />  frontend developer.
+            Hi, <br /> I am Vladimir,<br />  full-stack developer.
           </h1>
-          <p>Frontend developer | JavaScript expert | React developer</p>
+          <p>JavaScript expert | React developer | Node.js developer</p>
           <button onClick={() => router.push("/contact")}>Contact me</button>
         </div>
       </div>
-      <div className={css.section}>RIGHT SIDE</div>
+      <div className={css.section}>
+        <div className={css.imageWrapper}>
+          <img src={ProfileImage.src} alt="profile_image" />
+        </div>
+      </div>
     </div>
   )
 }

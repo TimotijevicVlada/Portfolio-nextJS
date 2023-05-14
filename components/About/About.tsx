@@ -26,10 +26,15 @@ const About = () => {
             <div className={css.leftWrapper}>
                 <div className={css.innerWrapper}>
                     <h1>About me</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a
-                        type specimen book.
+                    <p>
+                        I am a full-stack developer with a passion for tackling new challenges.
+                        Whether it is working with React or diving into the latest JavaScript frameworks,
+                        I am always excited to push the limits of what is possible.<br />
+                        I thrive in a fast-paced environment and enjoy finding creative solutions to complex problems.
+                        As an enthusiast of all things tech, I am constantly looking for ways to stay up-to-date with the
+                        latest industry trends. <br />
+                        I approach each project with enthusiasm and dedication to delivering high-quality results.<br />
+                        When I am not coding, you can find me exploring new technologies or experimenting with personal projects.
                     </p>
                 </div>
             </div>

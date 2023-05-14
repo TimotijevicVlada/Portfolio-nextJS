@@ -61,5 +61,26 @@
                 }
             }
         }
+
+        .imageWrapper {
+            width: 30rem;
+            height: 30rem;
+            border-radius: 50%;
+            overflow: hidden;
+
+            @include respond(phone) {
+                width: 18rem;
+                height: 18rem;
+                margin: 0 auto;
+                margin-top: 2rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
     }
 }
