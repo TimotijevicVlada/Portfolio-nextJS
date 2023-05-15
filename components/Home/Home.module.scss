@@ -27,6 +27,10 @@
                 font-weight: 600;
                 animation: titleAnimation 0.7s ease forwards;
 
+                &.hidden {
+                    visibility: hidden;
+                }
+
                 @include respond(phone) {
                     font-size: 2rem;
                     animation: unset;

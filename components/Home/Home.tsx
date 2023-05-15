@@ -15,7 +15,7 @@ const Home = () => {
 
   const isMobile = windowSize && windowSize < 768;
 
-  const title = ["H", "i", ",", "I", " ", "a", "m", " ", "V", "l", "a", "d", "i", "m", "i", "r", ",", " ", "f", "u", "l", "l", "-", "s", "t", "a", "c", "k", " ", "w", "e", "b", " ", "d", "e", "v", "e", "l", "o", "p", "e", "r"]
+  const title = ["H", "i", ",", "I", ".", "a", "m", "/", "V", "l", "a", "d", "i", "m", "i", "r", ",", "f", "u", "l", "l", "-", "s", "t", "a", "c", "k", "/", "w", "e", "b", "/", "d", "e", "v", "e", "l", "o", "p", "e", "r"]
 
   return (
     <div className={css.container}>
@@ -23,11 +23,10 @@ const Home = () => {
         <div className={css.leftSideContainer}>
           {!isMobile ? title.map((char, index) => (
             <>
-              {(index === 3 || index === 18) && <br />}
-              {char === " " && <span key={index}>&nbsp;&nbsp;&nbsp;</span>}
+              {(index === 3 || index === 17) && <br />}
               <span
                 key={index}
-                className={css.title}
+                className={`${css.title} ${(char === "." || char === "/") ? css.hidden : ""}`}
                 style={{ animationDelay: `${index / 10}s` }}
               >
                 {char}
