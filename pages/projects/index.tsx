@@ -9,6 +9,7 @@ const index = () => {
   return (
     <div className={css.container}>
       <Head>
+        <title>Portfolio | Projects</title>
         <link
           rel="stylesheet"
           type="text/css"

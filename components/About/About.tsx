@@ -25,15 +25,19 @@ const About = () => {
         <div className={css.container}>
             <div className={css.leftWrapper}>
                 <div className={css.innerWrapper}>
-                    <h1>About me</h1>
-                    <p>
+                    <h1 className={css.title}>About me</h1>
+                    <p className={css.description}>
                         I am a full-stack developer with a passion for tackling new challenges.
                         Whether it is working with React or diving into the latest JavaScript frameworks,
-                        I am always excited to push the limits of what is possible.<br />
+                        I am always excited to push the limits of what is possible.
+                    </p>
+                    <p className={css.description}>
                         I thrive in a fast-paced environment and enjoy finding creative solutions to complex problems.
                         As an enthusiast of all things tech, I am constantly looking for ways to stay up-to-date with the
-                        latest industry trends. <br />
-                        I approach each project with enthusiasm and dedication to delivering high-quality results.<br />
+                        latest industry trends.
+                    </p>
+                    <p className={css.description}>
+                        I approach each project with enthusiasm and dedication to delivering high-quality results.
                         When I am not coding, you can find me exploring new technologies or experimenting with personal projects.
                     </p>
                 </div>

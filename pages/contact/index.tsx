@@ -1,13 +1,20 @@
 import React from 'react';
+import Head from 'next/head';
 
 //component
 import Contact from '@/components/Contact/Contact';
 
 const index = () => {
   return (
-    <div>
-      <Contact />
-    </div>
+    <>
+      <Head>
+        <title>Portfolio | Contact</title>
+      </Head>
+      <div>
+        <Contact />
+      </div>
+    </>
+
   )
 }
 

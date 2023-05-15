@@ -18,7 +18,7 @@
         }
 
         .innerWrapper {
-            h1 {
+            .title {
                 font-weight: 300;
                 color: $color-gold;
                 margin-bottom: 0.5rem;
@@ -31,12 +31,14 @@
                 }
             }
 
-            p {
+            .description {
                 width: 30rem;
                 color: $color-white;
                 line-height: 1.5rem;
                 opacity: 0;
                 animation: slideTop 1s ease forwards;
+                text-indent: 2rem;
+                margin-bottom: 1rem;
 
                 @include respond(phone) {
                     width: 100%;

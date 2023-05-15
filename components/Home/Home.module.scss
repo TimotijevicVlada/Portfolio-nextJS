@@ -19,12 +19,17 @@
 
         .leftSideContainer {
             padding: 1rem 0.7rem 0.7rem 0.7rem;
-            h1 {
+
+            .title {
+                display: inline-block;
                 font-size: 3.5rem;
                 color: $color-white;
+                font-weight: 600;
+                animation: titleAnimation 0.7s ease forwards;
 
                 @include respond(phone) {
                     font-size: 2rem;
+                    animation: unset;
                     text-align: center;
                 }
             }
@@ -67,6 +72,7 @@
             height: 30rem;
             border-radius: 50%;
             overflow: hidden;
+            position: relative;
 
             @include respond(phone) {
                 width: 18rem;
