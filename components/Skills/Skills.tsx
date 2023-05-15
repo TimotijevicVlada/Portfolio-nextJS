@@ -18,6 +18,8 @@ import GitHub from "svg/github.svg";
 import NodeJs from "svg/node-js.svg";
 import MongoDB from "svg/mongodb.svg";
 import StyledComponents from "svg/styled_components.svg";
+import Express from "svg/express.svg";
+import Vscode from "svg/vscode.svg";
 
 const Skills = () => {
 
@@ -34,10 +36,12 @@ const Skills = () => {
         { name: "MaterialUI", icon: <MUIicon /> },
         { name: "Styled Components", icon: <StyledComponents /> },
         { name: "Node.js", icon: <NodeJs /> },
+        { name: "Express.js", icon: <Express /> },
         { name: "MongoDB", icon: <MongoDB /> },
         { name: "Git hub", icon: <GitHub /> },
         { name: "GIT", icon: <GITicon /> },
         { name: "NPM", icon: <NPMicon /> },
+        { name: "VS code", icon: <Vscode /> },
     ]
 
     return (
