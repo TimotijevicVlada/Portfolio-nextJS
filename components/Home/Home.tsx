@@ -15,7 +15,7 @@ const Home = () => {
 
   const isMobile = windowSize && windowSize < 768;
 
-  const title = ["H", "i", ",", "I", ".", "a", "m", "/", "V", "l", "a", "d", "i", "m", "i", "r", ",", "f", "u", "l", "l", "-", "s", "t", "a", "c", "k", "/", "w", "e", "b", "/", "d", "e", "v", "e", "l", "o", "p", "e", "r"]
+  const title = ["H", "i", ",", "I", ".", "a", "m", "/", "V", "l", "a", "d", "i", "m", "i", "r", ",", "f", "r", "o", "n", "t", "e", "n", "d", "/", "d", "e", "v", "e", "l", "o", "p", "e", "r"]
 
   return (
     <div className={css.container}>

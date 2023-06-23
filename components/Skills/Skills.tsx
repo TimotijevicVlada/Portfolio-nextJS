@@ -53,7 +53,7 @@ const Skills = () => {
                 scalable and maintainable applications, I am skilled in developing server-side APIs and
                 client-side interfaces. I am constantly learning and keeping up-to-date with the latest
                 advancements in web development, ensuring I can provide the best solutions to any challenges
-                that come my way.  
+                that come my way.
             </p>
             <div className={css.skillsContainer}>
                 {tech.map((item, index) => (
