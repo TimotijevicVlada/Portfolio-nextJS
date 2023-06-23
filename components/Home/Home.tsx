@@ -33,7 +33,7 @@ const Home = () => {
               </span>
             </>
           )) :
-            <span className={css.title}>Hi, <br /> I am Vladimir, <br /> full-stack web developer</span>
+            <span className={css.title}>Hi, <br /> I am Vladimir, <br /> frontend developer</span>
           }
           <p>JavaScript expert | React developer | Node.js developer</p>
           <button onClick={() => router.push("/contact")}>Contact me</button>

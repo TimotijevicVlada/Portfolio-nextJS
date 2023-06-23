@@ -27,7 +27,7 @@ const About = () => {
                 <div className={css.innerWrapper}>
                     <h1 className={css.title}>About me</h1>
                     <p className={css.description}>
-                        I am a full-stack developer with a passion for tackling new challenges.
+                        I am a frontend developer with a passion for tackling new challenges.
                         Whether it is working with React or diving into the latest JavaScript frameworks,
                         I am always excited to push the limits of what is possible.
                     </p>

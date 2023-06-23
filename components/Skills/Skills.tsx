@@ -48,7 +48,7 @@ const Skills = () => {
         <div className={css.container}>
             <h1 className={css.title}>Skills</h1>
             <p className={css.description}>
-                As a full-stack developer, I have experience in a range of technologies and frameworks,
+                As a frontend developer, I have experience in a range of technologies and frameworks,
                 including JavaScript, React, Node.js, Redux etc. With a focus on building
                 scalable and maintainable applications, I am skilled in developing server-side APIs and
                 client-side interfaces. I am constantly learning and keeping up-to-date with the latest
